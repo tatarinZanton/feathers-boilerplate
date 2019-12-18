@@ -5,12 +5,14 @@
 ## About
 
 This project uses [Feathers](http://feathersjs.com).
+
 Includes:
-[Objection](https://vincit.github.io/objection.js/)
-[SoftDelete](https://github.com/griffinpp/objection-soft-delete)
-[Knex](http://knexjs.org/)
-[EmailTemplates](https://github.com/forwardemail/email-templates)
-[AuthManagement](https://github.com/feathers-plus/feathers-authentication-management/blob/master/docs.md)
+
+- [Objection](https://vincit.github.io/objection.js/)
+- [SoftDelete](https://github.com/griffinpp/objection-soft-delete)
+- [Knex](http://knexjs.org/)
+- [EmailTemplates](https://github.com/forwardemail/email-templates)
+- [AuthManagement](https://github.com/feathers-plus/feathers-authentication-management/blob/master/docs.md)
 
 ## Getting Started
 
