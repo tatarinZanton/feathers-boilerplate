@@ -2,7 +2,7 @@ process.env.NODE_ENV = process.env.NODE_ENV ? process.env.NODE_ENV : 'developmen
 module.exports = {
   apps: [
     {
-      name: 'todo-api',
+      name: 'feathers-boilerplate',
       script: 'src/index.js',
       instances: 1,
       exec_mode: 'fork',
