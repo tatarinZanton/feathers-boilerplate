@@ -1,0 +1,4 @@
+--exclude ./constants/**/*-constant.js
+--recursive
+--timeout 5000
+--exit
