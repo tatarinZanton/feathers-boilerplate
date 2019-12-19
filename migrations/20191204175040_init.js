@@ -1,4 +1,4 @@
-exports.up = async function(knex) {
+exports.up = async knex => {
   await knex.schema.createTable('users', table => {
     table.uuid('id').unique();
     table.primary('id');
@@ -26,6 +26,6 @@ exports.up = async function(knex) {
   await knex.raw(`CREATE UNIQUE INDEX email_unique ON users(email) WHERE "deletedAt" is null;`);
 };
 
-exports.down = async function(knex) {
+exports.down = async knex => {
   await knex.schema.dropTableIfExists('users');
 };

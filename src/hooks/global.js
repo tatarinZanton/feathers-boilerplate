@@ -16,7 +16,7 @@ exports.allowNull = () => {
 //works only with one level nesting!
 exports.softDelete = () => {
   return ctx => {
-    if (ctx.params && ctx.params.query && Object.prototype.hasOwnProperty.call(ctx.params.query, 'deletedAt')) {
+    if (ctx.params && ctx.params.query && !Object.prototype.hasOwnProperty.call(ctx.params.query, 'deletedAt')) {
       ctx.params.query.deletedAt = null;
     }
   };

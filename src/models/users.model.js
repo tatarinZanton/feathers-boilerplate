@@ -1,13 +1,7 @@
 module.exports = function(app) {
-  const knex = app.get('knex');
   const Model = require('objection').Model;
   const uuid = require('uuid/v4');
-
-  const softDelete = require('objection-soft-delete')({
-    columnName: 'deletedAt',
-    deletedValue: knex.fn.now(),
-    notDeletedValue: null,
-  });
+  const softDelete = app.get('softDelete');
 
   class Users extends softDelete(Model) {
     static get tableName() {
@@ -25,6 +19,7 @@ module.exports = function(app) {
           password: 'string',
           name: 'string',
           phone: 'string',
+
           //for authmanagement, some fiels are missed in documentation
           //full list of required fields
           isVerified: 'boolean',
