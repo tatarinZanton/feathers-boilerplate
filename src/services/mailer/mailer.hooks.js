@@ -9,6 +9,7 @@ module.exports = {
     get: [],
     create: [
       async ctx => {
+        //TODO remove to hook or service
         ctx.data.payload.url = `http://${ctx.app.get('host')}:${ctx.app.get('port')}`;
 
         let emailBody = await emailTemplates.renderAll(ctx.data.type, ctx.data.payload);

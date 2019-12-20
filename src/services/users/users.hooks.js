@@ -3,7 +3,9 @@ const { hashPassword, protect } = require('@feathersjs/authentication-local').ho
 const commonHooks = require('feathers-hooks-common');
 const verifyHooks = require('feathers-authentication-management').hooks;
 const { iff, isProvider, preventChanges } = require('feathers-hooks-common');
-const { allowNull, softDelete, sendEmail } = require('../../hooks/global');
+const allowNull = require('../../hooks/allow-null');
+const softDelete = require('../../hooks/soft-delete');
+const sendVerifyToken = require('../../hooks/send-verify-token');
 
 module.exports = {
   before: {
@@ -46,7 +48,7 @@ module.exports = {
     get: [protect('verifyToken', 'verifyExpires', 'verifyChanges', 'resetToken', 'verifyShortToken', 'resetExpires')],
 
     create: [
-      sendEmail(),
+      sendVerifyToken(),
       verifyHooks.removeVerification(),
       protect(
         'isVerified',
@@ -71,7 +73,13 @@ module.exports = {
   },
 
   error: {
-    all: [],
+    all: [
+      ctx => {
+        console.log(ctx);
+
+        return ctx;
+      },
+    ],
     find: [],
     get: [],
     create: [],
