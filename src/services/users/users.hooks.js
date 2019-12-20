@@ -43,9 +43,29 @@ module.exports = {
       protect('password'),
     ],
 
-    find: [protect('verifyToken', 'verifyExpires', 'verifyChanges', 'resetToken', 'verifyShortToken', 'resetExpires')],
+    find: [
+      protect(
+        'isVerified',
+        'verifyToken',
+        'verifyExpires',
+        'verifyChanges',
+        'resetToken',
+        'verifyShortToken',
+        'resetExpires',
+      ),
+    ],
 
-    get: [protect('verifyToken', 'verifyExpires', 'verifyChanges', 'resetToken', 'verifyShortToken', 'resetExpires')],
+    get: [
+      protect(
+        'isVerified',
+        'verifyToken',
+        'verifyExpires',
+        'verifyChanges',
+        'resetToken',
+        'verifyShortToken',
+        'resetExpires',
+      ),
+    ],
 
     create: [
       sendVerifyToken(),
@@ -73,13 +93,7 @@ module.exports = {
   },
 
   error: {
-    all: [
-      ctx => {
-        console.log(ctx);
-
-        return ctx;
-      },
-    ],
+    all: [],
     find: [],
     get: [],
     create: [],

@@ -1,3 +1,4 @@
+const errorHandler = require('./hooks/error-handler');
 // Application hooks that run for every service
 
 module.exports = {
@@ -22,7 +23,7 @@ module.exports = {
   },
 
   error: {
-    all: [],
+    all: [errorHandler()],
     find: [],
     get: [],
     create: [],
