@@ -12,6 +12,7 @@ exports.attachSwaggerDocs = app => {
   const servicesDocs = Object.keys(app.services)
     .map(path => app.service(path).docs)
     .filter(doc => doc);
+
   const completeSwaggerDocs = deepmerge.all([{}, rootDocs(app), ...servicesDocs]);
 
   app.use(

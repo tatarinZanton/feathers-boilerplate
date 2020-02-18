@@ -1,0 +1,14 @@
+{
+  "host": "HOST",
+  "port": "PORT",
+  "connection": "POSTGRES_DB_URL",
+  "mail": {
+    "service": "MAIL_SERVICE_NAME",
+    "host": "MAIL_SERVICE_HOST",
+    "port": "MAIL_SERVICE_PORT",
+    "auth": {
+      "user": "MAIL_SERVICE_USERNAME",
+      "pass": "MAIL_SERVICE_PASSWORD"
+    }
+  }
+}
