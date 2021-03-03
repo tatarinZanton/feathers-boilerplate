@@ -57,7 +57,7 @@
     "objection-soft-delete": "^1.0.7",
     "objection-softdelete": "^2.0.1",
     "pg": "^7.14.0",
-    "pug": "^2.0.4",
+    "pug": "^3.0.1",
     "serve-favicon": "^2.5.0",
     "swagger-ui-express": "^4.1.2",
     "uuidv4": "^6.0.0",
